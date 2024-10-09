@@ -55,33 +55,33 @@ class NewsController extends Controller
     public function index(Request $request)
     {
 
-        if ($request->has('search')) {
-            $search = $request->get('search');
+        // if ($request->has('search')) {
+        //     $search = $request->get('search');
+        //     $newsQuery = News::with('tags')
+        //         ->whereHas('tags', function ($query) use ($search) {
+        //             $query->where('tag', 'LIKE', "%$search%");
+        //         })
+        //         ->orWhereHas("user", function ($query) use ($search, $request) {
+        //             $query->whereRaw("name", "LIKE", "%$search%")
+        //                 ->when($request->has('search') && $request->get('search') == 'admin', function ($query) use ($search) {
+        //                     $query->orWhere("role", "LIKE", "%$search%");
+        //                 });
+        //         })
+        //         ->orWhere("title", "LIKE", "%$search%")
+        //         ->orWhere("content", "LIKE", "%$search%")
+        //         ->join('users', 'news.user_id', '=', 'users.id')
+        //         ->select('news.*', 'users.name', 'users.role')
+        //         ->orderBy('news.created_at', 'desc')
+        //         // ->get()
+        //     ;
+        // } else {
             $newsQuery = News::with('tags')
-                ->whereHas('tags', function ($query) use ($search) {
-                    $query->where('tag', 'LIKE', "%$search%");
-                })
-                ->orWhereHas("user", function ($query) use ($search, $request) {
-                    $query->whereRaw("name", "LIKE", "%$search%")
-                        ->when($request->has('search') && $request->get('search') == 'admin', function ($query) use ($search) {
-                            $query->orWhere("role", "LIKE", "%$search%");
-                        });
-                })
-                ->orWhere("title", "LIKE", "%$search%")
-                ->orWhere("content", "LIKE", "%$search%")
                 ->join('users', 'news.user_id', '=', 'users.id')
                 ->select('news.*', 'users.name', 'users.role')
                 ->orderBy('news.created_at', 'desc')
                 // ->get()
             ;
-        } else {
-            $newsQuery = News::with('tags')
-                ->join('users', 'news.user_id', '=', 'users.id')
-                ->select('news.*', 'users.name', 'users.role')
-                ->orderBy('news.created_at', 'desc')
-                // ->get()
-            ;
-        }
+        // }
         $news = $newsQuery->paginate(9);
         $tags = Tag::all();
         return view('news.index', compact('news', 'tags'));

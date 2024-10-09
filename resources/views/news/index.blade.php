@@ -1,4 +1,4 @@
-@include('layouts.app')
+@extends('layouts.app')
 
 @section('title')
     News
@@ -10,7 +10,7 @@
 
 @section('content')
     <div class="banner_New">
-        <img src="img/photo_2024-10-06_13-01-20.jpg">
+        <img src="{{ asset('assets/img/news/photo_2024-10-06_13-01-20.jpg') }}">
 
         <div class="banner_text">
             <h1>

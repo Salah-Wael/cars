@@ -1,0 +1,135 @@
+@import url(
+  https://fonts.googleapis.com/css2?family=Material + Symbols + Outlined:opsz,
+  wght,
+  FILL,
+  GRAD@20..48,
+  100.700,
+  0.1,
+  -50.200
+);
+
+@import url(https://fonts.googleapis.com/css2?family=Open + Sans&display=swap);
+
+@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);
+*,
+:after,
+:before {
+  border: 0 solid #e5e7eb;
+}
+:host,
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: Open Sans, ui-sans-serif, system-ui, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  -webkit-tap-highlight-color: transparent;
+}
+small {
+  font-size: 80%;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-size: 100%;
+  font-variation-settings: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+#full .mb-2 {
+  margin-bottom: 8px;
+}
+#full .mb-6 {
+  margin-bottom: 24px;
+}
+#full .flex {
+  display: flex;
+}
+#full .min-h-\[600px\] {
+  height: 720px;
+}
+#full .w-\[400px\] {
+  width: 900px;
+}
+#full .w-\[800px\] {
+  width: 1510px;
+}
+#full .w-full {
+  width: 100%;
+}
+#full .flex-row {
+  flex-direction: row;
+}
+#full .flex-col {
+  flex-direction: column;
+}
+#full .items-center {
+  align-items: center;
+}
+#full .justify-center {
+  justify-content: center;
+}
+#full .rounded-md {
+  border-radius: 18px;
+}
+#full .border-red-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+#full .bg-neutral-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 232 232 / var(--tw-bg-opacity));
+}
+#full .bg-red-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+#full .p-8 {
+  padding: 32px;
+}
+#full .px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#full .py-2 {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+#full .py-3 {
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+#full .font-title {
+  font-family: Lato, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+#full .text-2xl {
+  font-size: 24px;
+  line-height: 32px;
+}
+#full .font-semibold {
+  font-weight: 600;
+}
+#full .text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+#full .text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+#full .text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
