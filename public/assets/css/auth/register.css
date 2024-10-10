@@ -126,3 +126,8 @@ textarea {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+img,
+video {
+    height: 100%;
+    max-width: 100%;
+}
