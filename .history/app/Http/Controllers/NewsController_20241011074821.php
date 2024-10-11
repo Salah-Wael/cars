@@ -86,6 +86,7 @@ class NewsController extends Controller
         // }
         $news = $newsQuery->paginate(9);
         $tags = Tag::all();
+        dd($news);
         return view('news.index', compact('news', 'tags'));
     }
 

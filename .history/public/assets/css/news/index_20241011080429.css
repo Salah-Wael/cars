@@ -1,7 +1,11 @@
-/* Overall Section Styling */
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
 .product-section {
     padding: 60px 0;
-    background-color: #f5f5f5;
 }
 
 .product-filters {
@@ -23,13 +27,12 @@
     background-color: #3498db;
     color: white;
     border-radius: 25px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .product-filters ul li.active,
 .product-filters ul li:hover {
     background-color: #e74c3c;
-    color: white;
 }
 
 /* News Cards Layout */
@@ -45,92 +48,85 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .news_card:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
 }
 
 /* News Content */
-.news_card strong {
-    display: block;
-    margin-bottom: 10px;
-    color: #2c3e50;
-    font-weight: 600;
+.news_card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.news_card p {
-    margin: 10px 0;
+.news_date {
+    font-size: 0.9em;
     color: #7f8c8d;
 }
 
-.news_card b {
+.news_tags {
+    margin: 10px 0;
+}
+
+.news_tags .badge {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.news_tags .badge:hover {
+    background-color: #e74c3c;
+}
+
+/* Title and Content */
+.news-title {
     font-size: 18px;
     color: #34495e;
     margin-bottom: 10px;
-    display: block;
 }
 
-.news_card img {
+.news-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
 }
 
-/* Tags Styling */
-.news_card span {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 5px 10px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    transition: all 0.3s ease;
-}
-
-.news_card span:hover {
-    background-color: #e74c3c;
+.news-content {
+    color: #2c3e50;
 }
 
 /* Button Styles */
-.news_card a.btn {
+.news-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.news-actions a.btn {
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 25px;
     font-size: 14px;
-    transition: background-color 0.3s ease;
 }
 
-.news_card a.btn-primary {
+.news-actions a.btn-primary {
     background-color: #3498db;
     color: white;
-    margin-right: 10px;
 }
 
-.news_card a.btn-primary:hover {
-    background-color: #e74c3c;
+.news-actions a.btn-primary:hover {
+    background-color: #2980b9;
 }
 
-.news_card .btn-danger {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.news_card .btn-danger:hover {
-    background-color: #c0392b;
-}
-
-/* Delete Button Form */
-.news_card form {
-    display: inline-block;
-}
-
-input[type="submit"] {
+input[type="submit"].btn-danger {
     background-color: #e74c3c;
     color: white;
     padding: 10px 20px;
@@ -140,8 +136,16 @@ input[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"].btn-danger:hover {
     background-color: #c0392b;
+}
+
+/* No News Message */
+.no-news {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #e74c3c;
 }
 
 /* Responsive Design */

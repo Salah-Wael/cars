@@ -114,6 +114,7 @@ form select:focus {
 
 
 
+
 /* Hide the actual checkbox */
 .tag-checkbox {
     display: none;
@@ -142,8 +143,8 @@ form select:focus {
     color: white;
 }
 
-/* Change label background color when checkbox is checked */
-input[type="checkbox"]:checked + label.tag-label {
+/* Selected state: change the whole label color when checkbox is checked */
+.tag-checkbox:checked + .tag-label {
     background-color: red;
     color: white;
 }

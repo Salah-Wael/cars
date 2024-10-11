@@ -84,11 +84,11 @@
 
 @section('script')
     <script>
-        document.querySelector('input[type="reset"]').addEventListener('click', function() {
-            // Optionally, you can add custom logic here if needed
-            document.getElementById('myForm').reset(); // Replace 'myForm' with your form ID
-        });
-    </script>
+    document.querySelector('input[type="reset"]').addEventListener('click', function() {
+        // Optionally, you can add custom logic here if needed
+        document.getElementById('myForm').reset(); // Replace 'myForm' with your form ID
+    });
+</script>
 
 @endsection
 

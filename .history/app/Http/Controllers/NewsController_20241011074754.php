@@ -76,7 +76,7 @@ class NewsController extends Controller
         //     ;
         // } else {
         $newsQuery = News::with(['tags' => function ($query) {
-            $query->select('tag'); // Ensure you include 'id' for proper relation mapping
+            $query->select('id', 'tag'); // Ensure you include 'id' for proper relation mapping
         }])
             ->join('users', 'news.user_id', '=', 'users.id')
             ->select('news.*', 'users.name', 'users.role')
@@ -86,6 +86,7 @@ class NewsController extends Controller
         // }
         $news = $newsQuery->paginate(9);
         $tags = Tag::all();
+        dd($news);
         return view('news.index', compact('news', 'tags'));
     }
 

@@ -114,12 +114,13 @@ form select:focus {
 
 
 
+
 /* Hide the actual checkbox */
 .tag-checkbox {
     display: none;
 }
 
-/* Styling the label */
+/* Styling the label with tag */
 .tag-label {
     display: inline-block;
     padding: 8px 12px;
@@ -131,8 +132,7 @@ form select:focus {
 }
 
 /* Default state */
-.tag-label {
-    background-color: #f0f0f0;
+.tag-label span {
     color: #000;
 }
 
@@ -142,8 +142,8 @@ form select:focus {
     color: white;
 }
 
-/* Change label background color when checkbox is checked */
-input[type="checkbox"]:checked + label.tag-label {
+/* Selected state */
+.tag-checkbox:checked + span {
     background-color: red;
     color: white;
 }

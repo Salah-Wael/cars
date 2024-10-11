@@ -41,13 +41,13 @@
                 @endif
 
                 <p>Tags</p>
-                {{-- @foreach ($new->tags as $tag)
+                @foreach ($new->tags as $tag)
                     <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
-                @endforeach --}}
+                @endforeach
                 @forelse ($new->tags as $tag)
-                    <span >
+                    <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
                 @empty

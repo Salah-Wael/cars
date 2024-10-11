@@ -41,17 +41,17 @@
                 @endif
 
                 <p>Tags</p>
-                {{-- @foreach ($new->tags as $tag)
+                @foreach ($new->tags as $tag)
                     <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
-                @endforeach --}}
-                @forelse ($new->tags as $tag)
-                    <span >
+                @endforeach
+                @forelse ( as )
+                    <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
                 @empty
-                    <p>No tags</p>
+                    
                 @endforelse
 
                 <b>{{ $new->title }}</b>

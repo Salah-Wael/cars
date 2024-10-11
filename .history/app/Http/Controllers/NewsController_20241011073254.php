@@ -75,17 +75,16 @@ class NewsController extends Controller
         //         // ->get()
         //     ;
         // } else {
-        $newsQuery = News::with(['tags' => function ($query) {
-            $query->select('tag'); // Ensure you include 'id' for proper relation mapping
-        }])
-            ->join('users', 'news.user_id', '=', 'users.id')
-            ->select('news.*', 'users.name', 'users.role')
-            ->orderBy('news.created_at', 'desc')
-            // ->get()
+            $newsQuery = News::with('tags','user')
+                ->join('users', 'news.user_id', '=', 'users.id')
+                ->select('news.*', 'users.name', 'users.role')
+                ->orderBy('news.created_at', 'desc')
+                // ->get()
             ;
         // }
         $news = $newsQuery->paginate(9);
         $tags = Tag::all();
+
         return view('news.index', compact('news', 'tags'));
     }
 

@@ -54,19 +54,15 @@
         </div>
         @endif
 
+        <label for="tags">Tags</label>
         <div class="tags-container">
-    @foreach ($tags as $tag)
-        <input
-            type="checkbox"
-            name="tags[]"
-            value="{{ $tag->id }}"
-            class="tag-checkbox"
-            id="tag-{{ $tag->id }}"
-            {{ in_array($tag->id, old('tags', [])) ? 'checked' : '' }}>
-
-        <label for="tag-{{ $tag->id }}" class="tag-label">{{ $tag->tag }}</label>
-    @endforeach
-</div>
+            @foreach ($tags as $tag)
+                <label class="tag-label">
+                    <input type="checkbox" name="tags[]" value="{{ $tag->id }}" class="tag-checkbox">
+                    <span>{{ $tag->tag }}</span>
+                </label>
+            @endforeach
+        </div>
 
         @if($errors->has('tags'))
         <div class="alert alert-danger">
@@ -80,16 +76,6 @@
         <input type="reset" value="Reset">
 
     </form>
-@endsection
-
-@section('script')
-    <script>
-        document.querySelector('input[type="reset"]').addEventListener('click', function() {
-            // Optionally, you can add custom logic here if needed
-            document.getElementById('myForm').reset(); // Replace 'myForm' with your form ID
-        });
-    </script>
-
 @endsection
 
 

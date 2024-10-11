@@ -40,19 +40,12 @@
                     {{ ", updated at" }} {{ date("Y-m-d h:m",strtotime($new->updated_at)) }}
                 @endif
 
-                <p>Tags</p>
-                {{-- @foreach ($new->tags as $tag)
+                Tags
+                @foreach ($new->tags as $tag)
                     <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
-                @endforeach --}}
-                @forelse ($new->tags as $tag)
-                    <span >
-                        {{ $tag->tag }}
-                    </span>
-                @empty
-                    <p>No tags</p>
-                @endforelse
+                @endforeach
 
                 <b>{{ $new->title }}</b>
                 <br>

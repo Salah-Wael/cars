@@ -47,7 +47,7 @@
                     </span>
                 @endforeach --}}
                 @forelse ($new->tags as $tag)
-                    <span >
+                    <span class="badge badge-primary">
                         {{ $tag->tag }}
                     </span>
                 @empty
