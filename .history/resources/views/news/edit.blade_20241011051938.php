@@ -42,7 +42,7 @@
         </label>
 
         <br>
-        <img style="width: 70px; hieght: 100px;" src="{{ asset("assets/img/news/".$news->image) }}" alt="{{ $news->title }}">
+        <img style="width: 70px; hieght: 100px;" src="{{ asset("assets/images/news/".$news->image) }}" alt="{{ $news->title }}">
 
     </div>
 

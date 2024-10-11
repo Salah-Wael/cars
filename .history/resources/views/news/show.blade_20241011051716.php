@@ -38,7 +38,7 @@
             @endforeach
             <!--Featured Image-->
             <div class="card my-4 mb-4">
-                <img src="{{ asset("assets/img/news/".$news->image) }}">
+                <img src="{{ asset("assets/images/news/".$news->image) }}">
             </div>
             <!--/.Featured Image-->
 

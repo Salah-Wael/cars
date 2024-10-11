@@ -21,7 +21,10 @@
 
             <small id="article-meta">
                 <strong>
-                    {{ 'By '.$news->user->name }}
+                    {{ 'By ' }}
+                    <a href="/user">
+                        {{  }}
+                    </a>
                 </strong>
                 @if ($news->created_at == $news->updated_at)
                 {{ ", created at" }} {{ date("Y-m-d h:i A",strtotime($news->created_at)) }}
@@ -38,7 +41,7 @@
             @endforeach
             <!--Featured Image-->
             <div class="card my-4 mb-4">
-                <img src="{{ asset("assets/img/news/".$news->image) }}">
+                <img src="{{ asset("assets/images/news/".$news->image) }}">
             </div>
             <!--/.Featured Image-->
 
@@ -46,24 +49,7 @@
                 <div class="card-body">{!! nl2br($news->content) !!}</div>
             </div>
 
-            @if (auth()->user()->role == 'admin')
-                <div class="card my-4 mb-4">
-                    <div class="row">
-                        @if (auth()->user()->role == 'admin')
-                            <div class="col-md-6">
-                                <a href="{{ route('news.edit',$news->id) }}"><button class="btn btn-primary" style="width:100%;">Edit</button></a>
-                            </div>
-                        @endif
-                        <div class="col-md-6">
-                            <form action="{{ route('news.delete',$news->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <input type="submit" style="width:100%;" class="btn btn-danger" name="post-delete-form" value="DELETE">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            @endif
+            @yield('buttons')
 
         </div>
         <!--Grid column-->

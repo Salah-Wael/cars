@@ -46,23 +46,20 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ route('car.create') }}">Create car</a></li>
                                 @if (auth()->user()->role == 'admin')
-
-                                    <li><a class="dropdown-item" href="{{ route('car.table') }}">Cars Table</a></li>
-                                @endif
+                    <form action="{{ route('news.delete', $new->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-danger" name="post-delete-form" value="Delete">
+                    </form>
+                @endif
+                                <li><a class="dropdown-item" href="{{ route('car.table') }}">Cars Table</a></li>
                             </ul>
                         </li>
-                        <!-- News (with sub-menu) -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('news.index') }}">News</a>
-
-                            @if (auth()->user()->role == 'admin')
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('news.create') }}">Create new news</a></li>
-                                </ul>
-                            @endif
+                        <li class="nav-item">
+                            <a class="nav-link fw-semibold fs-6 ms-2" href="#"></a>
                         </li>
                         <li class="nav-item">
-
+                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('news.index') }}">News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold fs-6 ms-2" href="#">Services</a>

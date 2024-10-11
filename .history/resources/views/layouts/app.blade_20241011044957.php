@@ -51,18 +51,8 @@
                                 @endif
                             </ul>
                         </li>
-                        <!-- News (with sub-menu) -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('news.index') }}">News</a>
-
-                            @if (auth()->user()->role == 'admin')
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('news.create') }}">Create new news</a></li>
-                                </ul>
-                            @endif
-                        </li>
                         <li class="nav-item">
-
+                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('news.index') }}">News</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-semibold fs-6 ms-2" href="#">Services</a>

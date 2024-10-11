@@ -57,7 +57,7 @@
 
                             @if (auth()->user()->role == 'admin')
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="{{ route('news.create') }}">Create new news</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('news.create') }}">Create new news</a></li>
                                 </ul>
                             @endif
                         </li>

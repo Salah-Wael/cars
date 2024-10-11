@@ -55,11 +55,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('news.index') }}">News</a>
 
-                            @if (auth()->user()->role == 'admin')
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if (auth()->user()->role == 'admin')
                                     <li><a class="dropdown-item" href="{{ route('news.create') }}">Create new news</a></li>
-                                </ul>
-                            @endif
+                                    <li><a class="dropdown-item" href="{{ route('news') }}">Create car</a></li>
+                                @endif
+                            </ul>
                         </li>
                         <li class="nav-item">
 

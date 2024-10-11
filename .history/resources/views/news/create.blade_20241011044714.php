@@ -1,17 +1,22 @@
-@extends( 'layouts.app')
+@extends( 'layout.nav')
 
 @section('title')
-    Create News
+Heros | Create News
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('/assets/css/news/create.css') }}">
+    <meta name="_token" content="{{ csrf_token() }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/create-post.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-@endsection
+@show
 
 @section('script')
 
 @endsection
+
+{{-- @section('admin-nav')
+    @parent
+@endsection --}}
 
 @section('content')
 

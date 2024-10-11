@@ -38,11 +38,11 @@
 
         <label for="image" class="custom-file-upload">
             <span>Click if you need to apdate the image</span>
-            <input type="file" name="image" id="image" accept=".jpeg, .jpg, .png, .webp, .svg">
+            <input type="file" name="image" id="image" accept=".jpeg, .jpg, .png, .jfif, .svg">
         </label>
 
         <br>
-        <img style="width: 70px; hieght: 100px;" src="{{ asset("assets/img/news/".$news->image) }}" alt="{{ $news->title }}">
+        <img style="width: 70px; hieght: 100px;" src="{{ asset("assets/images/news/".$news->image) }}" alt="{{ $news->title }}">
 
     </div>
 

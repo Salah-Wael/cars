@@ -38,7 +38,7 @@
             @endforeach
             <!--Featured Image-->
             <div class="card my-4 mb-4">
-                <img src="{{ asset("assets/img/news/".$news->image) }}">
+                <img src="{{ asset("assets/images/news/".$news->image) }}">
             </div>
             <!--/.Featured Image-->
 
@@ -49,7 +49,7 @@
             @if (auth()->user()->role == 'admin')
                 <div class="card my-4 mb-4">
                     <div class="row">
-                        @if (auth()->user()->role == 'admin')
+                        @if (((auth()->user()->role == 'admin') )
                             <div class="col-md-6">
                                 <a href="{{ route('news.edit',$news->id) }}"><button class="btn btn-primary" style="width:100%;">Edit</button></a>
                             </div>

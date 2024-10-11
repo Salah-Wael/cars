@@ -5,7 +5,8 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('/assets/css/news/create.css') }}">
+    <meta name="_token" content="{{ csrf_token() }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/css/create-post.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 @endsection
 
