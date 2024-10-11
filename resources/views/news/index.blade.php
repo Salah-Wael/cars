@@ -114,7 +114,7 @@
         </div>
 
         <div class="card">
-            <img src="{{ asset('assets/img/news/2.webp') }}" alt="">
+            <img src="{{ asset('assets/img/news/8.webp') }}" alt="">
             <div class="card-contant">
                 <h1>2024 Chevrolet Camaro 1LT Convertible</h1>
                 <p> Exterior: Black<br>5.7L V-8 Gas V <br> Fuel Type: Gas</p>
@@ -139,7 +139,7 @@
         <br>
 
         <div class="card">
-            <img src="{{ asset('assets/img/news/10.webp') }}p" alt="">
+            <img src="{{ asset('assets/img/news/10.webp') }}" alt="">
             <div class="card-contant">
                 <h1>2024 Chevrolet Camaro 1LT Convertible</h1>
                 <p> Exterior: Black<br>5.7L V-8 Gas V <br> Fuel Type: Gas</p>
