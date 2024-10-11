@@ -133,7 +133,9 @@
                             aliquam turpis facilisi. Vestibulum
 
                         </p>
+                        <a href="{{ route('car.index') }}">Buy Now</a>
                         <button onclick="window.location.href='{{ route('car.index') }}'" class="high_btn">Buy Now</button>
+
                     </div>
                     <div class="high_image col-md-6">
                         <img class="high_img" src="{{ asset('assets/img/app/wallpaperflare.com_wallpaper (2).jpg') }}" alt="">

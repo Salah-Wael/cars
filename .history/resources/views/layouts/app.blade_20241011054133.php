@@ -133,6 +133,7 @@
                             aliquam turpis facilisi. Vestibulum
 
                         </p>
+                        <a href="{{ route('car.index') }}">Buy Now</a>
                         <button onclick="window.location.href='{{ route('car.index') }}'" class="high_btn">Buy Now</button>
                     </div>
                     <div class="high_image col-md-6">

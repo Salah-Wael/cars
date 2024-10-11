@@ -44,7 +44,7 @@
                             <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('car.index') }}">Cars</a> <!-- Direct link -->
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('car.create') }}">Sell your Car</a></li>
+                                <li><a class="dropdown-item" href="{{ route('car.create') }}">Sell your own car</a></li>
                                 @if (auth()->user()->role == 'admin')
 
                                     <li><a class="dropdown-item" href="{{ route('car.table') }}">Cars Table</a></li>
@@ -133,7 +133,8 @@
                             aliquam turpis facilisi. Vestibulum
 
                         </p>
-                        <button onclick="window.location.href='{{ route('car.index') }}'" class="high_btn">Buy Now</button>
+                        <a href="{{ route('car.index') }}"></a>
+                        <button class="high_btn">Shop Now</button>
                     </div>
                     <div class="high_image col-md-6">
                         <img class="high_img" src="{{ asset('assets/img/app/wallpaperflare.com_wallpaper (2).jpg') }}" alt="">
