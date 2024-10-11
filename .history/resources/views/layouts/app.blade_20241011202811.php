@@ -62,7 +62,7 @@
                             @endif
                         </li>
                         <!-- News (with sub-menu) -->
-                        @if (auth()->check() && auth()->user()->role == 'admin')
+                        @if (auth()->check()auth()->user()->role == 'admin')
                             <li class="nav-item dropdown">
                                 <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('tag.index') }}">Tags</a>
 
@@ -183,59 +183,9 @@
             </div>
         </section>
 
-
-
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2>Cars</h2>
-                <div class="border"></div>
-            </div>
-
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="new_car_car col-md-4">
-                        <div class="car_card">
-                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
-                            <div class="car_details">
-                                <h4>2024 Chevrolet Camaro ILT Convertible</h4>
-                                <p><strong>Exterior:</strong> Black</p>
-                                <p><strong>Engine:</strong> 5.7L V-8 Gas V</p>
-                                <p><strong>Fuel Type:</strong> Gas</p>
-                                <div class="car_status">Used</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="new_car_car col-md-4">
-                        <div class="car_card">
-                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
-                            <div class="car_details">
-                                <h4>2023 Dodge Challenger R/T RWD</h4>
-                                <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
-                                <p><strong>Engine:</strong> 5.7L V-8 Gas V</p>
-                                <p><strong>Fuel Type:</strong> Gas</p>
-                                <div class="car_status">Used</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="new_car_car col-md-4">
-                        <div class="car_card">
-                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
-                            <div class="car_details">
-                                <h4>2024 Ram 2500 Tradesman</h4>
-                                <p><strong>Exterior:</strong> Black</p>
-                                <p><strong>Engine:</strong> 6.4L V-8 Gas V</p>
-                                <p><strong>Fuel Type:</strong> Gas</p>
-                                <div class="car_status">Used</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="new_car mt-5">
-            <div class="title text-center">
-                <h2>News Cars</h2>
+                <h1>New Cars</h1>
                 <div class="border"></div>
             </div>
 
@@ -281,6 +231,53 @@
             </div>
         </section>
 
+        <section class="new_car mt-5">
+            <div class="title text-center">
+                <h1>Used Cars</h1>
+                <div class="border"></div>
+            </div>
+
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="new_car_car col-md-4">
+                        <div class="car_card">
+                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
+                            <div class="car_details">
+                                <h4>2024 Chevrolet Camaro ILT Convertible</h4>
+                                <p><strong>Exterior:</strong> Black</p>
+                                <p><strong>Engine:</strong> 5.7L V-8 Gas V</p>
+                                <p><strong>Fuel Type:</strong> Gas</p>
+                                <div class="car_status">Used</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new_car_car col-md-4">
+                        <div class="car_card">
+                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
+                            <div class="car_details">
+                                <h4>2023 Dodge Challenger R/T RWD</h4>
+                                <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
+                                <p><strong>Engine:</strong> 5.7L V-8 Gas V</p>
+                                <p><strong>Fuel Type:</strong> Gas</p>
+                                <div class="car_status">Used</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="new_car_car col-md-4">
+                        <div class="car_card">
+                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
+                            <div class="car_details">
+                                <h4>2024 Ram 2500 Tradesman</h4>
+                                <p><strong>Exterior:</strong> Black</p>
+                                <p><strong>Engine:</strong> 6.4L V-8 Gas V</p>
+                                <p><strong>Fuel Type:</strong> Gas</p>
+                                <div class="car_status">Used</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="feedback mt-5 ">
             <div class="title ms-5">
                 <h1>What people are saying about us</h1>

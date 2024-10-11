@@ -92,8 +92,8 @@ class CarController extends Controller
 
         // $qrCode = QrCode::size(300)->generate('https://sala7.great-site.net/product/' . $carId);
 
-        // return view('car.show', compact('car', 'related', 'carImages', 'qrCode'));
-        return view('car.show', compact('car', 'related', 'carImages'));
+        return view('car.show', compact('car', 'related', 'carImages', 'qrCode'));
+        return view('car.show', compact('car', 'related', 'carImages', 'qrCode'));
     }
 
     public function index()

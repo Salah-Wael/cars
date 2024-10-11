@@ -16,7 +16,7 @@
         <div class="row">
             @foreach($carImages as $image)
                 <div class="col-md-3">
-                    <img src="{{ asset('assets/img/cars' . $image->image) }}" class="img-fluid">
+                    <img src="{{ asset('assets/img/' . $image->filename) }}" class="img-fluid">
                 </div>
             @endforeach
         </div>
