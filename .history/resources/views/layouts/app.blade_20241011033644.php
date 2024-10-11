@@ -20,6 +20,9 @@
 
     @yield('css')
 
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    @endsection
 </head>
 
 <body>

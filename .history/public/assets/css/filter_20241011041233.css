@@ -1,0 +1,30 @@
+.product-filters {
+margin-bottom: 80px;
+display: flex;
+flex-direction: row
+}
+
+.product-filters ul {
+margin: 0;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+
+.product-filters ul li {
+display: inline-block;
+font-weight: 700;
+font-size: 18px;
+margin: 15px;
+border: 2px solid #051922;
+color: #323232;
+cursor: pointer;
+padding: 8px 20px;
+border-radius: 25px;
+}
+
+.product-filters ul li.active {
+border: 2px solid #82E9EF;
+background-color: #82E9EF;
+color: #fff;
+}

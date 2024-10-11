@@ -31,7 +31,10 @@
         @forelse($news as $new)
             <div class="card mb-3 news_card @foreach ($new->tags as $tag){{ str_replace(' ', '', $tag->tag).' ' }}@endforeach">
                 <strong>
-                    {{'By '. $new->name }}
+                    {{ 'By ' }}
+                    <a href="#">
+                        {{ $new->firstName.' '.$new->lastName }}
+                    </a>
                 </strong>
 
                 @if ($new->created_at == $new->updated_at)
@@ -49,7 +52,7 @@
                 <b>{{ $new->title }}</b>
                 <br>
 
-                <img src="{{ asset("assets/img/news/".$new->image) }}" alt="{{ $new->title }}">
+                <img src="{{ asset("assets/images/news/".$new->image) }}" alt="{{ $new->title }}">
 
                 @if (strlen($new->content) > 30)
                     <p>{{ substr($new->content, 0, 30) }}...</p>

@@ -20,6 +20,7 @@
 
     @yield('css')
 
+    @
 </head>
 
 <body>

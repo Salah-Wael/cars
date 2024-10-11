@@ -39,7 +39,7 @@ Route::prefix('news')->controller(NewsController::class)->group(function () {
     Route::get('/create', 'create')->name('news.create')->middleware('checkrole:admin');
     Route::post('/store', 'store')->name('news.store')->middleware('checkrole:admin');
     Route::get('/{newsId}', 'show')->name('news.show');
-    Route::get('/{search?}', 'index')->name('news.index')->middleware('checkrole:admin,user');
+    Route::get('/{search?}', 'index')->name('news.index')-;
     Route::get('/{newsId}/edit', 'edit')->name('news.edit')->middleware('checkrole:admin');
     Route::put('/{newsId}', 'update')->name('news.update')->middleware('checkrole:admin');
     Route::delete('/news/{newsId}/delete', 'delete')->name('news.delete')->middleware('checkrole:admin');

@@ -31,7 +31,10 @@
         @forelse($news as $new)
             <div class="card mb-3 news_card @foreach ($new->tags as $tag){{ str_replace(' ', '', $tag->tag).' ' }}@endforeach">
                 <strong>
-                    {{'By '. $new->name }}
+                    {{  }}
+
+                        {{'By ' $new->name }}
+
                 </strong>
 
                 @if ($new->created_at == $new->updated_at)

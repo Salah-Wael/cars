@@ -20,6 +20,9 @@
 
     @yield('css')
 
+    @section('')
+
+    @endsection
 </head>
 
 <body>
