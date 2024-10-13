@@ -33,7 +33,7 @@ require __DIR__.'/auth.php';
 Route::view('/error-404','error.404')->name('error.404');
 Route::view('/error-401','error.401')->name('error.401');
 
-Route::view('/services', 'services')->name('services');
+Route::view('/services', 'contact')->name('contact');
 
 Route::prefix('news')->controller(NewsController::class)->group(function () {
     Route::get('/create', 'create')->name('news.create')->middleware('checkrole:admin');

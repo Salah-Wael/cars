@@ -74,7 +74,7 @@
                             </li>
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('services') }}">Services</a>
+                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('se') }}">Services</a>
                         </li>
                     </ul>
                 </div>
