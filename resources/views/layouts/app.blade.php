@@ -197,7 +197,7 @@
                 <div class="row">
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
+                            <img src="{{ asset('assets/img/news/5.webp') }}" alt="2024 Chevrolet Camaro ILT Convertible">
                             <div class="car_details">
                                 <h4>2024 Chevrolet Camaro ILT Convertible</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -209,7 +209,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
+                            <img src="{{ asset('assets/img/news/6.webp') }}" alt="2023 Dodge Challenger R/T RWD">
                             <div class="car_details">
                                 <h4>2023 Dodge Challenger R/T RWD</h4>
                                 <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
@@ -221,7 +221,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
+                            <img src="{{ asset('assets/img/news/7.webp') }}" alt="2024 Ram 2500 Tradesman">
                             <div class="car_details">
                                 <h4>2024 Ram 2500 Tradesman</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -245,7 +245,7 @@
                 <div class="row">
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
+                            <img src="{{ asset('assets/img/news/1.webp') }}" alt="2024 Chevrolet Camaro ILT Convertible">
                             <div class="car_details">
                                 <h4>2024 Chevrolet Camaro ILT Convertible</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -257,7 +257,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
+                            <img src="{{ asset('assets/img/news/2.webp') }}" alt="2023 Dodge Challenger R/T RWD">
                             <div class="car_details">
                                 <h4>2023 Dodge Challenger R/T RWD</h4>
                                 <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
@@ -269,7 +269,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
+                            <img src="{{ asset('assets/img/news/3.webp') }}" alt="2024 Ram 2500 Tradesman">
                             <div class="car_details">
                                 <h4>2024 Ram 2500 Tradesman</h4>
                                 <p><strong>Exterior:</strong> Black</p>
