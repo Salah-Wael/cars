@@ -172,7 +172,7 @@ class CarController extends Controller
             }
             if($car->isDirty()){
                 $car->updated_at = now();
-                $car->post_status = 0;
+                $car->
             }
 
 

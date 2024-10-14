@@ -170,13 +170,11 @@ class CarController extends Controller
                 $car->images()->sync($imagesArray);
                 $car->image = $imagesArray[0];
             }
-            if($car->isDirty()){
-                $car->updated_at = now();
-                $car->post_status = 0;
-            }
+            if($car-)
 
 
 
+            $car->updated_at = now();
 
             $car->save();
 
