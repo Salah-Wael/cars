@@ -315,7 +315,7 @@
             <div class="row">
 
                 <div class="footer-col">
-                    <img src="{{ asset('assets/img/app/Footer.png') }}" class="nav-logo" alt="">
+                    <img class="logo"></img>
                 </div>
 
                 <div class="footer-col">

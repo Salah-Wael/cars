@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}">
-                <img src="{{ asset('assets/img/app/Nav.png') }}" class="nav-logo" alt="">
+                <img src="{{ asset('assets/img/app/Nav.png') }}" style="min-width: " alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -315,7 +315,7 @@
             <div class="row">
 
                 <div class="footer-col">
-                    <img src="{{ asset('assets/img/app/Footer.png') }}" class="nav-logo" alt="">
+                    <img class="logo"></img>
                 </div>
 
                 <div class="footer-col">

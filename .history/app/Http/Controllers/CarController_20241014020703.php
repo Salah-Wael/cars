@@ -108,7 +108,6 @@ class CarController extends Controller
     public function carsRequests()
     {
         $cars = Car::where('post_status', '=', 0)->with('images')->get();
-
         return view('car.cars-table', compact('cars'));
     }
 
@@ -156,7 +155,7 @@ class CarController extends Controller
 
             if ($request->hasFile('image')) {
                 ImageController::deleteImage($request->image, 'assets/img/cars/');
-                $car->image = ImageController::storeImage($request, 'image', 'assets/img/cars/');
+                $car->image = ImageController::storeImage($request, 'image_path', 'assets/img/cars/');
             }
 
             $car->updated_at = now();

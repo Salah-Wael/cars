@@ -15,13 +15,6 @@ body{
     display: block;
 }
 
-.nav-logo{
-    width: 200px;
-    height: 75px;
-    padding-top: 15px;
-    object-fit: cover;
-}
-
 .who_us {
 
     background: #1C1C1C;
@@ -76,6 +69,7 @@ font-size: 24px;
     /*Allows3Dtransformationsforchildelements*/transition: transform 0.6s ease;
     /*Smoothtransitionfortherotation*/transform-style: preserve-3d;
     /*Allows3Dtransformationsforchildelements*/transition: transform 0.6s ease, box-shadow 0.6s ease;
+     /* Smooth transition for the rotation and shadow */  :;
     -webkit-transition: transform 0.6s ease;
     -moz-transition: transform 0.6s ease;
     -ms-transition: transform 0.6s ease;
@@ -117,6 +111,7 @@ font-size: 24px;
 
   .car_img:hover .car_content {
     transform: rotateY(360deg);
+    /*Rotatetheimage180degreesonhover*/:;
     -webkit-transform: rotateY(360deg);
     -moz-transform: rotateY(360deg);
     -ms-transform: rotateY(360deg);
@@ -129,10 +124,7 @@ font-size: 24px;
     opacity: 2; /* Shows the text on hover */
 }
 
-h2 a{
-    text-decoration: none;
-    color: inherit;
-}
+h2 
 
   .new_car {
     padding: 20px 0;
@@ -224,13 +216,6 @@ h2 a{
 }
 
 /*Footer Page*/
-
-.footer-logo{
-    width: 500px;
-    height: 500px;
-    padding-top: 15px;
-    object-fit: cover;
-}
 
 .container{
     max-width: 1170px;

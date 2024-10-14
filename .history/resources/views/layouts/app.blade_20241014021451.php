@@ -27,9 +27,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}">
-                <img src="{{ asset('assets/img/app/Nav.png') }}" class="nav-logo" alt="">
-            </a>
+            <a class="navbar-brand fw-bold fs-3" href="#">Logo Here</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -65,7 +63,7 @@
                                 </ul>
                             @endif
                         </li>
-                        <!-- Tags (with sub-menu) -->
+                        <!-- News (with sub-menu) -->
                         @if (auth()->check() && auth()->user()->role == 'admin')
                             <li class="nav-item dropdown">
                                 <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('tag.index') }}">Tags</a>
@@ -91,6 +89,9 @@
                             </li>
                         @endif
                         @if (Route::has('register'))
+                            {{-- <li>
+                                <a href="{{ route('register') }}">{{ __('messages.Register') }}</a>
+                            </li> --}}
                             <li class="nav-item">
                                 <a class="btn btn-danger fw-semibold fs-6 ms-2" href="{{ route('register') }}">Sign Up</a>
                             </li>
@@ -185,7 +186,7 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2><a href="{{ route('car.index') }}" style="">Cars</a></h2>
+                <h2>Cars</h2>
                 <div class="border"></div>
             </div>
 
@@ -233,7 +234,7 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2><a href="{{ route('news.index') }}" style="">News Cars</a></h2>
+                <h2>News Cars</h2>
                 <div class="border"></div>
             </div>
 
@@ -315,7 +316,7 @@
             <div class="row">
 
                 <div class="footer-col">
-                    <img src="{{ asset('assets/img/app/Footer.png') }}" class="nav-logo" alt="">
+                    <img class="logo"></img>
                 </div>
 
                 <div class="footer-col">

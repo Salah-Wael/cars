@@ -27,9 +27,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}">
-                <img src="{{ asset('assets/img/app/Nav.png') }}" class="nav-logo" alt="">
-            </a>
+            <a class="navbar-brand fw-bold fs-3" href="#">Logo Here</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -185,7 +183,7 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2><a href="{{ route('car.index') }}" style="">Cars</a></h2>
+                <h2>Cars</h2>
                 <div class="border"></div>
             </div>
 
@@ -233,7 +231,11 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2><a href="{{ route('news.index') }}" style="">News Cars</a></h2>
+                <h2><a href="{{ route('news.index') }}">News Cars</a></h2>
+                <a href="{{ route('news.index') }}"><h2>News Cars</h2></a>
+                <h2><a href="{{ route('news.index') }}" style="text-decoration: none; color: inherit;">News Cars</a></h2>
+
+
                 <div class="border"></div>
             </div>
 
@@ -315,7 +317,7 @@
             <div class="row">
 
                 <div class="footer-col">
-                    <img src="{{ asset('assets/img/app/Footer.png') }}" class="nav-logo" alt="">
+                    <img class="logo"></img>
                 </div>
 
                 <div class="footer-col">
