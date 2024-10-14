@@ -152,6 +152,24 @@ body{
     text-decoration: none;
     border-radius: 5px;
     padding: 6px 60px;
+<<<<<<< HEAD
 
     margin: 20px 20px 20px 22%;
 }
+=======
+    margin-left: 22%;
+}
+
+/* Default icon class */
+.toggle-icon {
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+/* On hover, change to the fa-eye icon */
+.toggle-icon:hover::before {
+    content: "\f070"; /* Unicode for fa-eye */
+    font-family: "Font Awesome 6 Free"; /* Ensure you're using Font Awesome 6 */
+    font-weight: 900; /* Make sure the font is bold */
+}
+>>>>>>> fa434afb3b8a3895d6a7c842bff0b6c149b32530

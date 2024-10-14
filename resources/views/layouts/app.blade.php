@@ -10,6 +10,7 @@
 
     <!-- title -->
     <title>Cars - @yield('title', 'Home')</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -26,7 +27,9 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="#">Logo Here</a>
+            <a class="navbar-brand fw-bold fs-3" href="{{ route('dashboard') }}">
+                <img src="{{ asset('assets/img/app/Nav.png') }}" class="nav-logo" alt="">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -44,10 +47,11 @@
                             <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('car.index') }}">Cars</a> <!-- Direct link -->
 
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{ route('car.index') }}">All Cars</a></li>
                                 <li><a class="dropdown-item" href="{{ route('car.create') }}">Sell your Car</a></li>
                                 @if (auth()->check() && auth()->user()->role == 'admin')
-
                                     <li><a class="dropdown-item" href="{{ route('car.table') }}">Cars Table</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('car.archived') }}">Archived Cars</a></li>
                                 @endif
                             </ul>
                         </li>
@@ -61,7 +65,7 @@
                                 </ul>
                             @endif
                         </li>
-                        <!-- News (with sub-menu) -->
+                        <!-- Tags (with sub-menu) -->
                         @if (auth()->check() && auth()->user()->role == 'admin')
                             <li class="nav-item dropdown">
                                 <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('tag.index') }}">Tags</a>
@@ -73,7 +77,7 @@
                             
                         @endif
                         <li class="nav-item">
-                            <a class="nav-link fw-semibold fs-6 ms-2" href="#">Services</a>
+                            <a class="nav-link fw-semibold fs-6 ms-2" href="{{ route('services') }}">Services</a>
                         </li>
                     </ul>
                 </div>
@@ -83,17 +87,11 @@
 
 
                         @if (Route::has('login'))
-                            {{-- <li>
-                                <a href="{{ route('login') }}">{{ __('messages.Login') }}</a>
-                            </li> --}}
                             <li class="nav-item">
                                 <a class="btn btn-outline-danger fw-semibold fs-6 ms-2" href="{{ route('login') }}">LogIn</a>
                             </li>
                         @endif
                         @if (Route::has('register'))
-                            {{-- <li>
-                                <a href="{{ route('register') }}">{{ __('messages.Register') }}</a>
-                            </li> --}}
                             <li class="nav-item">
                                 <a class="btn btn-danger fw-semibold fs-6 ms-2" href="{{ route('register') }}">Sign Up</a>
                             </li>
@@ -188,7 +186,7 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2>Cars</h2>
+                <h2><a href="{{ route('car.index') }}" style="">Cars</a></h2>
                 <div class="border"></div>
             </div>
 
@@ -196,7 +194,7 @@
                 <div class="row">
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
+                            <img src="{{ asset('assets/img/news/5.webp') }}" alt="2024 Chevrolet Camaro ILT Convertible">
                             <div class="car_details">
                                 <h4>2024 Chevrolet Camaro ILT Convertible</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -208,7 +206,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
+                            <img src="{{ asset('assets/img/news/6.webp') }}" alt="2023 Dodge Challenger R/T RWD">
                             <div class="car_details">
                                 <h4>2023 Dodge Challenger R/T RWD</h4>
                                 <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
@@ -220,7 +218,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
+                            <img src="{{ asset('assets/img/news/7.webp') }}" alt="2024 Ram 2500 Tradesman">
                             <div class="car_details">
                                 <h4>2024 Ram 2500 Tradesman</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -236,7 +234,7 @@
 
         <section class="new_car mt-5">
             <div class="title text-center">
-                <h2>News Cars</h2>
+                <h2><a href="{{ route('news.index') }}" style="">News Cars</a></h2>
                 <div class="border"></div>
             </div>
 
@@ -244,7 +242,7 @@
                 <div class="row">
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca1.jpeg" alt="2024 Chevrolet Camaro ILT Convertible">
+                            <img src="{{ asset('assets/img/news/1.webp') }}" alt="2024 Chevrolet Camaro ILT Convertible">
                             <div class="car_details">
                                 <h4>2024 Chevrolet Camaro ILT Convertible</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -256,7 +254,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca2.jpeg" alt="2023 Dodge Challenger R/T RWD">
+                            <img src="{{ asset('assets/img/news/2.webp') }}" alt="2023 Dodge Challenger R/T RWD">
                             <div class="car_details">
                                 <h4>2023 Dodge Challenger R/T RWD</h4>
                                 <p><strong>Exterior:</strong> Triple Nickel Clearcoat</p>
@@ -268,7 +266,7 @@
                     </div>
                     <div class="new_car_car col-md-4">
                         <div class="car_card">
-                            <img src="./assest/ca3.jpeg" alt="2024 Ram 2500 Tradesman">
+                            <img src="{{ asset('assets/img/news/3.webp') }}" alt="2024 Ram 2500 Tradesman">
                             <div class="car_details">
                                 <h4>2024 Ram 2500 Tradesman</h4>
                                 <p><strong>Exterior:</strong> Black</p>
@@ -318,7 +316,7 @@
             <div class="row">
 
                 <div class="footer-col">
-                    <img class="logo"></img>
+                    <img src="{{ asset('assets/img/app/Footer.png') }}" class="nav-logo" alt="">
                 </div>
 
                 <div class="footer-col">
