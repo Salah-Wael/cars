@@ -5,10 +5,8 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/news/create.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/buttons.css') }}">
 
-@endsection
+
 
 @section('content')
     <form action="{{ route('news.update', $news->id) }}" method="post" enctype="multipart/form-data" class="dropzone" id="dropzone">

@@ -7,7 +7,6 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/news/create.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/buttons.css') }}">
-
 @endsection
 
 @section('content')

@@ -4,12 +4,6 @@
     Heros | Edit News
 @endsection
 
-@section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/news/create.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/buttons.css') }}">
-
-@endsection
-
 @section('content')
     <form action="{{ route('news.update', $news->id) }}" method="post" enctype="multipart/form-data" class="dropzone" id="dropzone">
         @csrf
@@ -75,7 +69,8 @@
 
         <!-- Submit Button -->
         <input type="submit" value="Edit">
-        <a href="{{ route('news.index') }}">
+        <a href="{{ route('') }}" class="button"></a>
+        <a href="{{ route('news.index', $car->id) }}">
             <button class="bn632-hover bn28">Cancel</button>
         </a>
     </form>
