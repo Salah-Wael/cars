@@ -32,6 +32,7 @@
     <!--Cards -->
 <div class="card-container">
     @forelse($cars as $car)
+
         <div class="card">
             <img src="{{ asset('assets/img/cars/'.$car->image) }}" alt="Car Image">
             <div class="card-contant">
@@ -59,4 +60,33 @@
         <p>No cars available Now</p>
     @endforelse
 </div>
+@endsection
+
+
+@section('script')
+<script>
+$('.hide-card-btn').click(function () {
+    var statusId = $(this).data('status-id');
+    var card = $('#card-' + statusId);
+
+    $.ajax({
+        url: '/check-admin',  // طلب للتحقق من صلاحية الأدمن
+        type: 'GET',
+        success: function (response) {
+            if (response.is_admin) {
+                // إذا كان أدمن، نخفي الكارد
+                card.fadeOut(500, function () {
+                    alert('Card hidden successfully!');
+                });
+            } else {
+                // إذا لم يكن أدمن، نعرض رسالة تنبيه
+                alert('You are not authorized to hide this card.');
+            }
+        },
+        error: function () {
+            alert('An error occurred. Please try again.');
+        }
+    });
+});
+
 @endsection

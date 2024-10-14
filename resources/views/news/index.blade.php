@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('/assets/css/news/index.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/css/filter.css') }}">
 @endsection
-
+<div class="after-head">
 @section('content')
     <div class="product-section mt-150 mb-150">
         <div class="container">
@@ -73,6 +73,7 @@
                 @if (auth()->user()->role == 'admin')
                     <a class="btn btn-primary" href="{{ route('news.edit', $new->id) }}" role="button">Edit</a>
                 @endif
+                <br>
 
                 @if (auth()->user()->role == 'admin')
                     <form action="{{ route('news.delete', $new->id) }}" method="post">
@@ -85,6 +86,7 @@
         @empty
             <h2>Sorry! No news today</h2>
         @endforelse
+    </div>
     </div>
 @endsection
 

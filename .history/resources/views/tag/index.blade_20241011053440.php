@@ -7,10 +7,15 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/tag/index.css') }}">
 @endsection
-
 @section('content')
     <div class="container mt-4">
-        <h2>Tags List</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="">Tags List</h2>
         <table class="table table-bordered">
             <thead>
                 <tr>

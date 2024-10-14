@@ -10,6 +10,12 @@
 
 @section('content')
     <div class="container mt-4">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h2>Tags List</h2>
         <table class="table table-bordered">
             <thead>

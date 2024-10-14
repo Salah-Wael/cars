@@ -86,7 +86,6 @@ body{
 
 
 
-
 /*Cards*/
 
 .card-container{
@@ -105,17 +104,16 @@ body{
     box-shadow: 0px 2px 4px rgb(0, 0, 0,0.3);
     overflow: hidden;
     transition: transform 0.6s ease ;
-
-
 }
+
 .card:hover{
     transform: translate(-20px);
 }
 
 .card img{
-    width: 100%;
-    height: auto;
+
     object-fit: cover;
+    max-height: 200px;
 }
 
 .card-content{
@@ -154,5 +152,6 @@ body{
     text-decoration: none;
     border-radius: 5px;
     padding: 6px 60px;
-    margin-left: 22%;
+
+    margin: 20px 20px 20px 22%;
 }
