@@ -1,14 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'Cars Table')
+@section('title', 'Cars requests')
 
 @section('content')
 <div class="container">
+<<<<<<< HEAD
     <br>
     <br>
     <br>
 
     <br>
+=======
+    @if( count($cars) > 0)
+>>>>>>> 374c93adb0c3a1522816e61c2233d25bb1dd40c3
     <h2>All Cars</h2>
     <table class="table table-bordered">
         <thead>
@@ -54,7 +58,7 @@
                 <!-- Action Buttons: Accept, Refuse, Archive -->
                 <td>
                     <!-- Accept Button -->
-                    <form action="{{-- route('car.accept', $car->id) --}}" method="POST" style="display: inline;">
+                    <form action="{{ route('car.accept', $car->id) }}" method="POST" style="display: inline;">
                         @csrf
                         <button class="btn btn-success btn-sm" type="submit">Accept</button>
                     </form>
@@ -79,6 +83,7 @@
             @endforeach
         </tbody>
     </table>
+<<<<<<< HEAD
     <br>
     <br>
     <br>
@@ -87,5 +92,13 @@
     <br>
     <br>
     <br>
+=======
+    @else
+    <div style="text-align:center;padding-top:50px; height: 207px;">
+        <h3>No cars requests yet</h3>
+    </div>
+
+    @endif
+>>>>>>> 374c93adb0c3a1522816e61c2233d25bb1dd40c3
 </div>
 @endsection
