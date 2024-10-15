@@ -4,6 +4,11 @@
 
 @section('content')
 <div class="container">
+    <br>
+    <br>
+    <br>
+
+    <br>
     <h2>All Cars</h2>
     <table class="table table-bordered">
         <thead>
@@ -65,11 +70,22 @@
                     <form action="{{ route('car.soft-delete', $car->id) }}" method="GET" style="display: inline;">
                         @csrf
                         <button class="btn btn-warning btn-sm" type="submit">Archive</button>
+                        <br>
+                        <br>
+                    
                     </form>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
 @endsection

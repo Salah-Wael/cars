@@ -134,8 +134,12 @@ body{
 }
 
 .news_card .btn-danger {
-    background-color: #EE2628;
+    background-color: #7f8c8d;
     color: white;
+    margin: 5px;
+    width: 300px;
+    margin-left: 10%;
+    border-radius: 5px;
 }
 
 .news_card .btn-danger:hover {
