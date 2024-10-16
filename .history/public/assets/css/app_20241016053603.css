@@ -1,0 +1,362 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Bai Jamjuree", sans-serif;
+
+}
+
+body{
+    background-color: #f8f8f8;
+    line-height: 1.5;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-logo{
+    width: 200px;
+    height: 75px;
+    padding-top: 15px;
+    object-fit: cover;
+}
+
+.who_us {
+
+    background: #1C1C1C;
+
+}
+.who_us .row {
+    justify-content: space-between;
+    align-items: center;
+}
+.who_us .container {
+    padding:100px;
+}
+.high {
+    text-align: justify;
+    margin-right: 30px;
+    flex:1;
+}
+
+
+.high_text_lg {
+    font-family: Bai Jamjuree;
+    font-size: 48px;
+    color:  #EE2628;
+}
+.high_img {
+    width: 100%;
+    border-radius: 50px;
+}
+.high_lorem {
+
+    font-size: 20px;
+    color: #ffffff;
+}
+.high_btn {
+height: 68px;
+color: #ffffff;
+text-align: center;
+background-color:#EE2628;
+width: 100%;
+border-radius: 10px;
+border: none;
+font-size: 24px;
+
+}
+.car_content {
+    text-align: center;
+    height: 350px;
+    /*Sameheightforall*/overflow: hidden;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /*Allows3Dtransformationsforchildelements*/transition: transform 0.6s ease;
+    /*Smoothtransitionfortherotation*/transform-style: preserve-3d;
+    /*Allows3Dtransformationsforchildelements*/transition: transform 0.6s ease, box-shadow 0.6s ease;
+    -webkit-transition: transform 0.6s ease;
+    -moz-transition: transform 0.6s ease;
+    -ms-transition: transform 0.6s ease;
+    -o-transition: transform 0.6s ease;
+}
+
+  .car_content img {
+    width: 100%;
+    height: 100%; /* Ensures all images maintain the same height */
+    object-fit: cover;
+    display: block;
+    border-radius: 5px;
+
+  }
+
+  .overlay_text {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  }
+
+  .car_img {
+    perspective: 1000px; /* Adds depth for the 3D effect */
+}
+
+  /* For alternating heights */
+  .car_img:nth-child(odd) {
+    margin-top: 0; /* No margin for odd images (higher) */
+  }
+
+  .car_img:nth-child(even) {
+    margin-top: 30px; /* Lower even images by adding top margin */
+  }
+
+  .car_img:hover .car_content {
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.7); /* Add a red shadow effect */
+}
+
+.car_img:hover .overlay_text {
+    opacity: 2; /* Shows the text on hover */
+}
+
+h2 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+  .new_car {
+    padding: 20px 0;
+  }
+
+  .car_card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .car_card:hover {
+    transform: scale(1.05);
+  }
+
+  .car_card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .car_details {
+    padding: 15px;
+  }
+
+  .car_details h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .car_details p {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  .car_status {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    text-align: right;
+    margin-top: 10px;
+  }
+
+
+
+
+/* Styling for the badge container */
+.badge-container {
+    display: flex;              /* Ensure elements inside align horizontally */
+    flex-wrap: wrap;            /* Allow wrapping if the badges exceed the width */
+    gap: 10px;                  /* Optional: add spacing between badges */
+    text-align: center;
+}
+
+.custom-badge {
+    padding: 0 10px;            /* Adjust padding for better readability */
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;        /* Prevent badges from breaking into multiple lines */
+    color: red;
+}
+
+/* Label for the tags */
+.tags-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Styling for the news title */
+.news-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Styling for the image */
+.news-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Styling for the content */
+.news-content {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}
+
+
+
+
+
+
+  .border{
+    width: 250px;
+    height: 5px;
+    background-color: #EE2628;
+    text-align: center;
+    margin: auto;
+  }
+
+  .border1{
+    width: 400px;
+    height: 5px;
+    background-color: #EE2628;
+  }
+
+  .testimonial-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 300px;
+}
+
+.testimonial-icon {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.testimonial-title {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.testimonial-text {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.testimonial-date {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
+
+/*Footer Page*/
+
+.footer-logo{
+    width: 500px;
+    height: 500px;
+    padding-top: 15px;
+    object-fit: cover;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    background-color: #EE2628;
+    padding: 7px o;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer-col{
+    width: 33.3%;
+    padding: 0 15px;
+}
+
+.footer-col h3{
+    font-size:22px ;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: bold;
+    padding: 10px;
+    padding-left: 0;
+}
+
+
+.footer-col ul li :not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{ font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+}
+
+.footer-col .social-links a{
+    display: inline-block;height: 40px;width: 40px;
+    background-color: #ffffff;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color:  #EE2628;
+    transition: all 0.5% ease;
+}
+
+.footer-col .social-links a:hover{
+    color:#c0bcbc ;
+    background-color: #ffffff;
+}
+
+@media(max-width:776px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:574px){
+    .footer-col{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+

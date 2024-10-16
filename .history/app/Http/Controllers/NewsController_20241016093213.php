@@ -1,0 +1,177 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Tag;
+use App\Models\News;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+
+class NewsController extends Controller
+{
+    public function create()
+    {
+        $tags = Tag::get();
+        return view('news.create', ['tags' => $tags]);
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate(
+            [
+                'title' => 'required|string|max:255',
+                'content' => 'required|string',
+                'image'   => 'required|image|mimes:jpeg,jpg,png,jfif,svg|max:5048',
+                'tags'    => 'required|array',
+                'tags.*'  => 'exists:tags,id', // Ensure each tag exists in the tags table
+            ],
+            #errors
+            [
+                'content.required' => "Discription is required",
+                'image.image'      => "The image field must be an image.",
+                'image.mimes'      => "The image field must be an image with extention (jpeg, jpg, png, jfif, or svg).",
+                'tags.required'    => 'You must select at least one tag.',
+                'tags.*.exists'    => 'Selected tag does not exist.',
+            ]
+        );
+
+        $news = new News();
+        $news->title = $data['title'];
+        $news->content = $data['content'];
+        $news->image = ImageController::storeImage($request, 'image', 'assets/img/news');
+        $news->user_id = Auth::user()->id;
+        $news->save();
+
+        $tags = $request->get('tags');
+        if ($tags) {
+            $news->tags()->attach($tags);
+        }
+
+        return redirect()->route('news.index')->with('success', "News created successfully.");
+    }
+
+    public function index(Request $request)
+    {
+
+        $newsQuery = News::with(['tags' => function ($query) {
+            $query->select('tag'); // Ensure you include 'id' for proper relation mapping
+        }])
+            ->join('users', 'news.user_id', '=', 'users.id')
+            ->select('news.*', 'users.name', 'users.role')
+            ->orderBy('news.updated_at', 'desc');
+
+        $news = $newsQuery->paginate(9);
+        $tags = Tag::all();
+        return view('news.index', compact('news', 'tags'));
+    }
+
+    public function show($newsId)
+    {
+
+        $news = News::where('news.id', $newsId)
+            ->join('users', 'news.user_id', '=', 'users.id')
+            ->select('news.*', 'users.name', 'users.role')
+            ->firstOr(function () {
+                return redirect()->route('error.404');
+            });
+
+        $tags = $news->tags;
+        $relatedNews = [];
+        $addedNewsIds = [];
+
+        foreach ($tags as $tag) {
+            foreach ($tag->news->where("id", "!=", $news->id) as $related) {
+                if (!in_array($related->id, $addedNewsIds)) {
+                    $relatedNews[] = $related;
+                    $addedNewsIds[] = $related->id;
+                }
+            }
+        }
+
+        return view('news.show', compact('news', 'relatedNews'));
+    }
+
+    public  function edit($newsId)
+    {
+
+        $news = News::where('news.id', $newsId)->with('user')->with('tags')
+            ->firstOr(function () {
+                return redirect()->route('error.404');
+            });
+        $tags = Tag::get();
+        $news_tags = $news->tags->pluck('id')->toArray();
+
+        return  view("news.edit", compact('news', 'tags', 'news_tags'));
+    }
+
+    public function update(Request $request, $newsId)
+    {
+        $news = News::find($newsId)->with('tags')->with('user');
+
+        if (auth()->user()->role == 'admin') {
+            $data = $request->validate(
+                [
+                    'title' => 'required|string|max:255',
+                    'content' => 'required|string',
+                    'image' => 'image|mimes:jpeg,jpg,png,webp,svg|max:2048',
+                ],
+                #errors messages
+                [
+                    'image.image' => "The image field must be an image.",
+                    'image.mimes' => "The image field must be an image with extension jpeg, jpg, png, webp, or svg.",
+                ]
+            );
+
+
+            $updateData = [
+                'title' => $data['title'],
+                'content' => $data['content'],
+            ];
+
+            if ($request->hasfile('image')) {
+                File::delete(public_path('assets/img/news/') . $news->image);
+                $updateData['image'] = ImageController::storeImage($request, 'image', 'assets/img/news');
+                $updateData['updated_at'] = now();
+            }
+
+
+
+            // $news->tags()->detach();
+            $newTags = $request->get('tags', []);
+            if ($newTags) {
+                // Attach the unique tags to the $news model
+                $news->tags()->sync($newTags);
+            }
+
+            if ($news->isDirty()) {
+                $news->update($updateData);
+            }
+
+            return redirect()->route('news.show', $newsId)->with('success', 'News updated successfully.');
+        } else {
+            return redirect()->route('error.401');
+        }
+    }
+
+    public  function delete($newsId)
+    {
+
+        $news = News::where('id', $newsId)
+            ->firstOr(function () {
+                return redirect()->route('error.404');
+            });
+
+        if (((auth()->user()->role == 'admin') || (auth()->user()->role == 'salesman' && Auth::user()->id == $news->user_id))) {
+
+            File::delete(public_path('assets/img/news/') . $news->image);
+            DB::table('news')->where('id', $newsId)->delete();
+
+            return redirect()->route('news.index')->with('success', "Your news deleted successfully");
+        } else {
+            return redirect()->route('error.401');
+        }
+    }
+
+}

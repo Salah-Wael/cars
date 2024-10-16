@@ -1,0 +1,202 @@
+/* Overall Section Styling */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #f8f8f8;
+    line-height: 1.5;
+}
+.after-head{
+    margin-left: 8%;
+}
+
+.product-section {
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.product-filters {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.product-filters ul li {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #EE2628;
+    color: rgb(255, 255, 255);
+    border-radius:5px;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.product-filters ul li.active,
+.product-filters ul li:hover {
+    background-color: #D6D6D6;
+    color: white;
+}
+
+/* News Cards Layout */
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.news_card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: all 0.3s ease;
+    object-fit: cover ;
+    margin: 0px 10px 10px 10px;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.news_card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* News Content */
+.news_card strong {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.news_card p {
+    margin: 10px 0;
+    color: #7f8c8d;
+}
+
+.news_card b {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.news_card img {
+    max-height: 200px;
+    object-fit: cover;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+/* Tags Styling */
+.news_card span {
+    display: inline-block;
+    background-color: #7f8c8d;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.news_card span:hover {
+    background-color: #EE2628;
+}
+
+/* Button Styles */
+.news_card a.btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.news_card a.btn-primary {
+    background-color: #EE2628;
+    color: white;
+    margin: 5px;
+    width: 300px;
+    margin-left: 10%;
+}
+
+.news_card a.btn-primary:hover {
+    background-color: #EE2628;
+}
+
+.news_card .btn-danger {
+    background-color: #7f8c8d;
+    color: white;
+    margin: 5px;
+    width: 300px;
+    margin-left: 10%;
+    border-radius: 5px;
+}
+
+.news_card .btn-danger:hover {
+    background-color: #EE2628;
+}
+
+/* Delete Button Form */
+.news_card form {
+    display: inline-block;
+}
+
+input[type="submit"] {
+    background-color: #7f8c8d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #EE2628;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-filters ul li {
+        padding: 8px 15px;
+        font-size: 14px;
+
+    }
+
+    .news-list {
+        grid-template-columns: 1fr;
+    }
+
+    .news_card {
+        padding: 10px;
+    }
+}
+
+.badge-container {
+    display: flex;              /* Aligns contents in a row */
+    align-items: center;        /* Ensures vertical alignment if needed */
+    gap: 10px;                  /* Optional: Adds space between inline items */
+}
+
+.custom-badge {
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;      /* Ensures the badge wraps its text */
+    display: inline;
+    display: inline;
+    white-space: nowrap;
+}
+
+
+
