@@ -108,14 +108,15 @@ class NewsController extends Controller
 
     public function update(Request $request, $newsId)
     {
-        $news = News::find($newsId)->with('tags')->with('user');
+        $news = News::with('tags')->find($newsId);
 
         if (auth()->user()->role == 'admin') {
             $data = $request->validate(
                 [
                     'title' => 'required|string|max:255',
                     'content' => 'required|string',
-                    'image' => 'image|mimes:jpeg,jpg,png,webp,svg|max:2048',
+                    'image' => 'image|mimes:jpeg,jpg,png,webp,svg|max:10000',
+                    'tags.*' => 'required',
                 ],
                 #errors messages
                 [
@@ -124,27 +125,25 @@ class NewsController extends Controller
                 ]
             );
 
-
-            $updateData = [
-                'title' => $data['title'],
-                'content' => $data['content'],
-            ];
+            $news['title'] = $data['title'];
+            $news['content'] = $data['content'];
 
             if ($request->hasfile('image')) {
                 File::delete(public_path('assets/img/news/') . $news->image);
-                $updateData['image'] = ImageController::storeImage($request, 'image', 'assets/img/news');
-                $updateData['updated_at'] = now();
+                $news->update([
+                    'image' => ImageController::storeImage($request, 'image', 'assets/img/news'),
+                ]);
             }
 
-            // $news->tags()->detach();
             $newTags = $request->get('tags', []);
             if ($newTags) {
-                // Attach the unique tags to the $news model
+                // $news->tags()->detach();
                 $news->tags()->sync($newTags);
+                $news->touch();
             }
 
             if ($news->isDirty()) {
-                $news->update($updateData);
+                $news->update($data);
             }
 
             return redirect()->route('news.show', $newsId)->with('success', 'News updated successfully.');
