@@ -44,8 +44,9 @@
                     <div class="card mb-4">
                         <div class="card-body">{!! nl2br($news->content) !!}</div>
                     </div>
-
                     @auth
+
+
                         @if (auth()->user()->role == 'admin')
                             <div class="card my-4 mb-4">
                                 <div class="row">
@@ -53,6 +54,7 @@
                                         <a href="{{ route('news.edit', $news->id) }}"><button class="btn btn-primary"
                                                 style="width:100%;">Edit</button></a>
                                     </div>
+
                                     <div class="col-md-6">
                                         <form action="{{ route('news.delete', $news->id) }}" method="post">
                                             @csrf
@@ -64,7 +66,9 @@
                                 </div>
                             </div>
                         @endif
+
                     @endauth
+
                 </div>
                 <!--Grid column-->
 
@@ -92,29 +96,31 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($relatedNews as $relatedNew)
-                                            <tr onclick="window.location.href='{{ route('news.show', $relatedNew->id) }}'" style="cursor:pointer;">
-                                                <!-- Image column -->
-                                                <td style="width: 100px;">
-                                                    <img src="{{ asset('assets/img/news/' . $relatedNew->image) }}"
-                                                        alt="{{ $relatedNew->title }}"
-                                                        style="width: 100px; height: auto;">
-                                                </td>
+                                            <a href="{{ route('news.show', $relatedNew->id) }}" class="plain-link">
+                                                <tr>
+                                                    <!-- Image column -->
+                                                    <td style="width: 100px;">
+                                                        <img src="{{ asset('assets/img/news/' . $relatedNew->image) }}"
+                                                            alt="{{ $relatedNew->title }}"
+                                                            style="width: 100px; height: auto;">
+                                                    </td>
 
-                                                <!-- Title column -->
-                                                <td>
-                                                    <h5 class="mt-0 mb-1 font-weight-bold">{{ $relatedNew->title }}
-                                                    </h5>
-                                                </td>
+                                                    <!-- Title column -->
+                                                    <td>
 
-                                                <!-- Excerpt column -->
-                                                <td>
-                                                    @if (strlen($relatedNew->content) > 30)
-                                                        {{ substr($relatedNew->content, 0, 30) }}...
-                                                    @else
-                                                        {{ $relatedNew->content }}
-                                                    @endif
-                                                </td>
-                                            </tr>
+                                                        <h5 class="mt-0 mb-1 font-weight-bold">{{ $relatedNew->title }}
+                                                        </h5>
+                                                    </td>
+
+                                                    <!-- Excerpt column -->
+                                                    <td>
+                                                        @if (strlen($relatedNew->content) > 30)
+                                                            {{ substr($relatedNew->content, 0, 30) }}...
+                                                        @else
+                                                            {{ $relatedNew->content }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
                                         @endforeach
                                     </tbody>
                                 </table>

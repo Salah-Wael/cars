@@ -92,29 +92,31 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($relatedNews as $relatedNew)
-                                            <tr onclick="window.location.href='{{ route('news.show', $relatedNew->id) }}'" style="cursor:pointer;">
-                                                <!-- Image column -->
-                                                <td style="width: 100px;">
-                                                    <img src="{{ asset('assets/img/news/' . $relatedNew->image) }}"
-                                                        alt="{{ $relatedNew->title }}"
-                                                        style="width: 100px; height: auto;">
-                                                </td>
+                                            <tr>
+                                                    <a href="{{ route('news.show', $relatedNew->id) }}" class="plain-link">
+                                                    <!-- Image column -->
+                                                    <td style="width: 100px;">
+                                                        <img src="{{ asset('assets/img/news/' . $relatedNew->image) }}"
+                                                            alt="{{ $relatedNew->title }}"
+                                                            style="width: 100px; height: auto;">
+                                                    </td>
 
-                                                <!-- Title column -->
-                                                <td>
-                                                    <h5 class="mt-0 mb-1 font-weight-bold">{{ $relatedNew->title }}
-                                                    </h5>
-                                                </td>
+                                                    <!-- Title column -->
+                                                    <td>
 
-                                                <!-- Excerpt column -->
-                                                <td>
-                                                    @if (strlen($relatedNew->content) > 30)
-                                                        {{ substr($relatedNew->content, 0, 30) }}...
-                                                    @else
-                                                        {{ $relatedNew->content }}
-                                                    @endif
-                                                </td>
-                                            </tr>
+                                                        <h5 class="mt-0 mb-1 font-weight-bold">{{ $relatedNew->title }}
+                                                        </h5>
+                                                    </td>
+
+                                                    <!-- Excerpt column -->
+                                                    <td>
+                                                        @if (strlen($relatedNew->content) > 30)
+                                                            {{ substr($relatedNew->content, 0, 30) }}...
+                                                        @else
+                                                            {{ $relatedNew->content }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
