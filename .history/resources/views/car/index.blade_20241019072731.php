@@ -5,7 +5,8 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/car/index.css') }}">
+
+<link rel="stylesheet" href="{{ asset('assets/css/car/index.css') }}">
 @endsection
 
 @section('content')
@@ -60,7 +61,7 @@
                 </div>
                 <div class="card-button-container">
                     <a href="{{ route('car.show', $car->id) }}">
-                        <button class="bn632-hover bn-blue">More Details</button>
+                        <button class="bn632-hover bn-blue">View More Details</button>
                     </a>
 
                     @if (auth()->check() && auth()->user()->id == $car->user_id)

@@ -7,7 +7,7 @@
 }
 
 .bn632-hover {
-  width: 110px;
+  width: 160px;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -36,7 +36,7 @@
   outline: none;
 }
 
-.bn632-hover.bn-red {
+.bn632-hover.bn28 {
   background-image: linear-gradient(
     to right,
     #eb3941,
@@ -45,36 +45,4 @@
     #e2373f
   );
   box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
-}
-
-/* Blue Gradient (View More Details Button) */
-.bn632-hover.bn-blue {
-  background-image: linear-gradient(
-    to right,
-    #007bff,
-    #3399ff,
-    #0069d9,
-    #004c9e
-  );
-  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
-}
-
-.bn632-hover.bn-blue:hover {
-  background-position: 100% 0;
-}
-
-/* Yellow Gradient (Edit Button) */
-.bn632-hover.bn-yellow {
-  background-image: linear-gradient(
-    to right,
-    #f7d51d,
-    #f8d52e,
-    #f6c300,
-    #e8b800
-  );
-  box-shadow: 0 5px 15px rgba(255, 233, 51, 0.4);
-}
-
-.bn632-hover.bn-yellow:hover {
-  background-position: 100% 0;
 }

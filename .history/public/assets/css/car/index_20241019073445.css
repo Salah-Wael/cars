@@ -92,8 +92,8 @@ body{
     position: relative;
     width: 100%;
     height: 230px;
-    background-size: cover; /* Ensures the background covers the whole area */
-    background-position: 100% 0; /* Positions the background to start at the right edge */
+    background-size:contain 100%;
+    /* background-position: center; */
     background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 

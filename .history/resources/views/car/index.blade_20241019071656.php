@@ -6,6 +6,7 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('assets/css/car/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/buttons.css') }}">
 @endsection
 
 @section('content')
@@ -60,12 +61,12 @@
                 </div>
                 <div class="card-button-container">
                     <a href="{{ route('car.show', $car->id) }}">
-                        <button class="bn632-hover bn-blue">More Details</button>
+                        <button class="bn632-hover bn-blue">View More Details</button>
                     </a>
 
                     @if (auth()->check() && auth()->user()->id == $car->user_id)
                         <a href="{{ route('car.edit', $car->id) }}">
-                            <button class="bn632-hover bn-yellow">Edit</button>
+                            <button class="bn632-hover bn28">Edit</button>
                         </a>
                     @endif
 
@@ -73,7 +74,7 @@
                         <form action="{{ route('car.force-delete', $car->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button class="bn632-hover bn-red">Delete</button>
+                            <button class="bn632-hover bn28">Delete</button>
                         </form>
                     @endif
                 </div>
