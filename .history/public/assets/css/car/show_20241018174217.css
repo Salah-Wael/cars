@@ -1,0 +1,141 @@
+/* General Layout */
+.container {
+    width: 90%; /* Increased to make better use of screen real estate */
+    margin: 0 auto;
+    padding: 0 15px; /* Added padding for better spacing */
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+.col-md-3, .col-md-4, .col-md-5 {
+    padding: 15px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%; /* Flexible, responsive width */
+}
+
+.col-md-4 {
+    flex: 0 0 33.3333%;
+}
+
+.col-md-5 {
+    flex: 0 0 41.6667%; /* Adjusted for consistency */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.single-product-img {
+    text-align: center;
+}
+
+.single-product-img .car-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.single-product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.product-image a:hover img {
+    opacity: 0.8;
+}
+.product-image {
+    height: 150px;
+}
+
+
+/* Car Details */
+.single-product-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(255, 76, 76, 0.4); /* Red shadow */
+    text-align: center; /* Center aligns the content */
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.single-product-content:hover {
+    transform: translateY(-5px); /* Slight hover lift */
+    box-shadow: 0px 6px 15px rgba(212, 63, 63, 0.5); /* Darker red shadow on hover */
+}
+
+.single-product-pricing {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff4c4c; /* Red color */
+}
+
+h3 {
+    font-size: 16px;
+    color: #d43f3f; /* Darker red */
+    margin: 10px 0;
+}
+
+.cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff4c4c; /* Red background */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 76, 76, 0.3); /* Red shadow for button */
+}
+
+.cart-btn:hover {
+    background-color: #d43f3f; /* Darker red on hover */
+    box-shadow: 0px 6px 12px rgba(212, 63, 63, 0.4); /* Darker red shadow on hover */
+}
+
+.cart-btn i {
+    margin-right: 5px;
+}
+
+/* Admin Delete Button Styling */
+.card-button-container {
+    margin-top: 20px;
+}
+
+.bn632-hover.bn28 {
+    background-color: #ff4c4c; /* Red delete button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(255, 76, 76, 0.3); /* Red shadow for delete button */
+}
+
+.bn632-hover.bn28:hover {
+    background-color: #d43f3f; /* Darker red on hover */
+    box-shadow: 0px 6px 12px rgba(212, 63, 63, 0.4); /* Darker red shadow on hover */
+}
+
+.bn632-hover.bn28:focus {
+    outline: none;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 100%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+}

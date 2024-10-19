@@ -1,0 +1,43 @@
+/* General Layout */
+
+.col-md-3, .col-md-4, .col-md-5 {
+    padding: 15px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%; /* Flexible, responsive width */
+}
+
+.col-md-4 {
+    flex: 0 0 33.3333%;
+}
+
+.col-md-5 {
+    flex: 0 0 41.6667%; /* Adjusted for consistency */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Breadcrumb Section */
+.breadcrumb-section {
+    background-image: url('/path/to/your/background-image.jpg');
+    padding: 80px 0;
+    background-size: cover; /* Ensure background covers entire area */
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.breadcrumb-text p {
+    font-size: 18px;
+}
+
+.breadcrumb-text h2 {
+    font-size: 36px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
