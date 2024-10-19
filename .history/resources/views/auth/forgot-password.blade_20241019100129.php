@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+    <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
         <h2 class="font-title text-red-500 text-2xl">Forgot Your Password?</h2>
         <p class="text-lg font-semibold">No problem. Just enter your email address, and we’ll send you a reset link.</p>
         <hr class="w-full my-4 border-red-500"/>

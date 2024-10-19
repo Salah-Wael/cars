@@ -66,4 +66,5 @@
                 {{ __('Dont have an account?') }}
             </a>
         </div>
+    </div>
 @endsection

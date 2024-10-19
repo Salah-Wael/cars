@@ -21,8 +21,8 @@
 
         <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
             <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
-                @yield('content')
-            </div>
+            @yield('content')
+
         </div>
       </div>
     </div>

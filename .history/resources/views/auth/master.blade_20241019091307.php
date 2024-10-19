@@ -15,14 +15,14 @@
         </div> --}}
         <div style="height: 550px; padding-top:90px;" class="w-full h-full flex items-center justify-center">
             <video style="border-radius: 8%" class="w-full h-full object-cover" autoplay muted>
-                <source src="{{ asset('assets/video/authh.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/video/671341851f0b329bbbe0a0a4.mp4') }}" type="video/mp4">
             </video>
         </div>
 
         <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
-            <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
-                @yield('content')
-            </div>
+
+            @yield('content')
+
         </div>
       </div>
     </div>

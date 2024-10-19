@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="full">
-      <div class="w-[800px] min-h-[550px] flex bg-neutral-50 rounded-lg shadow-lg">
+      <div style="width: 800px; height:550px;" class="flex bg-neutral-50 rounded-lg shadow-lg">
         {{-- <div class="w-[400px] bg-neutral-300 flex items-center justify-center">
             <img src="{{asset('assets/img/app/1.jpeg')}}" alt="" >
         </div> --}}
@@ -20,9 +20,9 @@
         </div>
 
         <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
-            <div class="w-[400px] flex flex-col items-center justify-center p-8 bg-neutral-50">
-                @yield('content')
-            </div>
+
+            @yield('content')
+
         </div>
       </div>
     </div>
